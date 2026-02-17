@@ -85,7 +85,6 @@ def get_financial_data(tickers, start_date, end_date, interval):
 
 
 def preprocess_data(trends_dict, financial_df, ma_window):
-    st.info(f"Dummy: Preprocessing data with MA window {ma_window}")
     processed_data_output = {}
 
     # Ensure financial_df has tickers as columns to avoid errors later
@@ -163,7 +162,6 @@ def preprocess_data(trends_dict, financial_df, ma_window):
 
 
 def plot_dual_axis_trends_vs_returns(data_dict, tickers):
-    st.info("Dummy: Generating dual-axis trends vs returns plot.")
     ticker = tickers[0]
     df = data_dict.get(ticker)  # Use .get() for safer access
 
@@ -196,7 +194,6 @@ def plot_dual_axis_trends_vs_returns(data_dict, tickers):
 
 
 def plot_cross_correlations(data_dict, tickers, max_lag):
-    st.info(f"Dummy: Generating cross-correlation plot for max lag {max_lag}.")
     ticker = tickers[0]
     df = data_dict.get(ticker)
 
@@ -240,7 +237,6 @@ def plot_cross_correlations(data_dict, tickers, max_lag):
 
 
 def perform_granger_causality(data_dict, tickers, maxlag):
-    st.info(f"Dummy: Performing Granger Causality test for maxlag {maxlag}.")
     ticker = tickers[0]
     df = data_dict.get(ticker)
 
@@ -272,8 +268,6 @@ def perform_granger_causality(data_dict, tickers, maxlag):
 
 
 def evaluate_signal_performance(data_dict, tickers, annualization_factor, ic_window):
-    st.info(
-        f"Dummy: Evaluating signal performance with annualization factor {annualization_factor} and IC window {ic_window}.")
     ticker = tickers[0]
     df = data_dict.get(ticker)
 
@@ -382,7 +376,6 @@ def evaluate_signal_performance(data_dict, tickers, annualization_factor, ic_win
 
 
 def evaluate_alt_data_scorecard(evaluation_scores, weights_dict):
-    st.info("Dummy: Evaluating alternative data scorecard.")
     weighted_sum = sum(evaluation_scores[dim] * weights_dict[dim]
                        for dim in weights_dict if dim in evaluation_scores and dim != 'Dataset')
 
